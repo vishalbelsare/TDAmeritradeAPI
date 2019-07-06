@@ -127,7 +127,7 @@ It's recommend you build from source. If you're not comfortable with this or jus
 
 If using a package manager, like apt, install the libcurl and libssl dev packages (this should take care of the other dependencies): 
 
-    user@host:~$ sudo apt-get install libcurl4-openssl-dev libssl-dev
+    user@host:~$ sudo apt-get install libcurl4-openssl-dev libssl-dev zlib1g-dev
 
 Alternatively, you can download them manually via github:
 
@@ -187,22 +187,15 @@ The library is implemented in C++ and needs to be built accordingly. It exports 
 
 - If you have a build issue file an issue or send an email.
 
-##### Unix/Linux
 
-The Eclipse/CDT generated makefiles are in the  'Debug' and 'Release' subdirectories. *(The makefiles may need some tweaks for non-linux systems.)*
+##### Unix/Linux/Mac
 
-    user@host:~/dev/TDAmeritradeAPI/Release$ make
+Use the makefile in the root directory to build the library. 
+
+    user@host:~/dev/TDAmeritradeAPI$ make release
 
 
-##### Mac
-
-Same as for Unix/Linux except you need to manually add '-luv' to objects.mk. It should read:
-```
-USER_OBJS := 
-LIBS := -lssl -lcrypto -lz -lcurl -lpthread -lutil -ldl -luv
-```
-
-##### WIndows
+##### Windows
 
 The build solution provided was created in ***VisualStudio2017*** using toolset ***v141***. (*If it doesn't work in your version of VS you'll need to tweak the project settings and/or source.*)
 

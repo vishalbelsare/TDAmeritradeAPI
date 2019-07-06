@@ -8,6 +8,7 @@
 *core
 *.info
 
+build/*
 python/build/*
 *.pydevproject
 *.pyc
